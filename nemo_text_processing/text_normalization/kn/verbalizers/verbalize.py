@@ -14,15 +14,15 @@
 
 from nemo_text_processing.text_normalization.kn.graph_utils import GraphFst
 from nemo_text_processing.text_normalization.kn.verbalizers.cardinal import CardinalFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.date import DateFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.decimal import DecimalFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.electronic import ElectronicFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.fraction import FractionFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.measure import MeasureFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.money import MoneyFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.ordinal import OrdinalFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.telephone import TelephoneFst
-#from nemo_text_processing.text_normalization.hi.verbalizers.time import TimeFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.date import DateFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.decimal import DecimalFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.electronic import ElectronicFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.fraction import FractionFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.measure import MeasureFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.money import MoneyFst
+from nemo_text_processing.text_normalization.kn.verbalizers.ordinal import OrdinalFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.telephone import TelephoneFst
+#from nemo_text_processing.text_normalization.kn.verbalizers.time import TimeFst
 #from nemo_text_processing.text_normalization.kn.verbalizers.whitelist import WhiteListFst
 
 
@@ -43,7 +43,9 @@ class VerbalizeFst(GraphFst):
         cardinal = CardinalFst(deterministic=deterministic)
         cardinal_graph = cardinal.fst
 
-        
+        ordinal = OrdinalFst(deterministic=deterministic)
+        ordinal_graph = ordinal.fst
+
         graph=(
             cardinal_graph
             #| decimal_graph
@@ -52,7 +54,7 @@ class VerbalizeFst(GraphFst):
             #| time_graph
             #| measure_graph
             #| money_graph
-            #| ordinal_graph
+            | ordinal_graph
             #| whitelist_graph
             #| telephone_graph
             #| electronic_graph

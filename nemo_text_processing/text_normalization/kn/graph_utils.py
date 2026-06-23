@@ -62,7 +62,7 @@ DECIMAL_25 = pynini.union(KN_DECIMAL_25, EN_DECIMAL_25).optimize()
 DECIMAL_75 = pynini.union(KN_DECIMAL_75, EN_DECIMAL_75).optimize()
 
 # Symbol constants
-KN_BY = "ಬಾಯಿ"
+KN_BY = "ಭಾಗ"
 LOWERCASE_X = "x"
 UPPERCASE_X = "X"
 ASTERISK = "*"
