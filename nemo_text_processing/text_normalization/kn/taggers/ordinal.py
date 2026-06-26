@@ -78,6 +78,7 @@ class OrdinalFst(GraphFst):
             pynini.cross("ಷ", "ಷನೆಯ"),
             pynini.cross("ಿ", "ಿಯನೆಯ"),
         )
+        
         #sigma          → matches "ಇಪ್ಪತ್ತೈದ"  (everything before last)
         #ordinal_rewrite → matches "ು" → "ನೆಯ"  (only the end)
         #result → "ಇಪ್ಪತ್ತೈದನೆಯ"
